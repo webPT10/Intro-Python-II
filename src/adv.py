@@ -1,4 +1,5 @@
 from room import Room
+from player import Player
 
 # Declare all the rooms
 room = {
@@ -36,13 +37,9 @@ room['treasure'].s_to = room['narrow']
 #
 
 # Make a new player object that is currently in the 'outside' room.
-class Player:
-    def __init__(self, name, currentRoom):
-        self.name = name
-        self.currentRoom = currentRoom
-        self.items = []
-
 new_player = Player('Eric', room['outside'])
+print(new_player)
+
 # Write a loop that:
 #
 # * Prints the current room name
