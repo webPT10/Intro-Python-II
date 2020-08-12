@@ -1,7 +1,6 @@
 from room import Room
 
 # Declare all the rooms
-
 room = {
     'outside':  Room("Outside Cave Entrance",
                      "North of you, the cave mount beckons"),
@@ -23,7 +22,6 @@ earlier adventurers. The only exit is to the south."""),
 
 
 # Link rooms together
-
 room['outside'].n_to = room['foyer']
 room['foyer'].s_to = room['outside']
 room['foyer'].n_to = room['overlook']
@@ -38,7 +36,13 @@ room['treasure'].s_to = room['narrow']
 #
 
 # Make a new player object that is currently in the 'outside' room.
+class Player:
+    def __init__(self, name, currentRoom):
+        self.name = name
+        self.currentRoom = currentRoom
+        self.items = []
 
+new_player = Player('Eric', room['outside'])
 # Write a loop that:
 #
 # * Prints the current room name
