@@ -1,7 +1,11 @@
 from room import Room
 from player import Player
 
+#Day 2 MVP
+
 # Declare all the rooms
+
+# room is a Dictionary > 
 room = {
     'outside':  Room("Outside Cave Entrance",
                      "North of you, the cave mount beckons"),
@@ -50,3 +54,17 @@ print(new_player)
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+
+validDirections = ['n', 's', 'e', 'w']
+
+while True:
+    command = input('Where ya going?').lower()
+
+    if command in validDirections:
+        new_player.move(command)
+        print(f'player: {new_player.currentRoom}')
+    elif command == 'q':
+        print('Thanks for playing!')
+        exit()
+    else:
+        print('Unknown Command!')
